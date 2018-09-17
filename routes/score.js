@@ -12,7 +12,7 @@ app.get('/score', (req, res) => {
 
     Score.find()
         .limit(limit)
-        .sort({ score: 1 })
+        .sort({ score: -1 })
         .exec((error, highScores) => {
             if (error) {
                 return res.status(500).json({
